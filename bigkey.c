@@ -6,7 +6,7 @@
 
 #define E 0x10001
 
-#define KEYSIZE 512
+#define KEYSIZE 2048
 #define P_WORDS ((KEYSIZE / 64) / 2)
 
 void big_p_(uint64_t *big, size_t words) {
