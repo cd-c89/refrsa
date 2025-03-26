@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define S (size_t)(8192 / 64)
+#define S (size_t)(8256 / 64)
 #define BYTES S * sizeof(uint64_t)
 
 void seebig(uint64_t *a); 
