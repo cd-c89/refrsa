@@ -148,7 +148,7 @@ void toline(FILE *fp, uint64_t *a) {
     return;
 }
 
-void bigkey() {
+void bigkey(void) {
     uint64_t d[S], n[S], p[S], q[S], l[S], i;
     char *fn, *adj;
     FILE *fp;    
@@ -179,7 +179,7 @@ void bigkey() {
 }
 
 
-int main(){
+int main(void){
     bigkey();
     return 0 ;
 }
