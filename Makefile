@@ -1,14 +1,15 @@
-CC = clang # or gcc
-CFLAGS = -std=c89 -Wall -Wextra -Werror -Wpedantic -O2 -lgmp
+CC = gcc # or clang
+CFLAGS = -std=c89 -Wall -Wextra -Werror -Wpedantic -O2
+CLIBS = -lgmp # for biggmp and primes
 BIGNUM = biggmp.c # or use 4096_t.c
 
 all: bigrsa bigkey
 
 bigrsa: bigrsa.c $(BIGNUM) 4096_t.h
-	$(CC) bigrsa.c $(BIGNUM) $(CFLAGS) -o bigrsa -lgmp
+	$(CC) bigrsa.c $(BIGNUM) $(CFLAGS) -o bigrsa $(CLIBS)
 	
 bigkey: bigkey.c $(BIGNUM) 4096_t.h
-	$(CC) bigkey.c $(BIGNUM) $(CFLAGS) -o bigkey -lgmp
+	$(CC) bigkey.c $(BIGNUM) $(CFLAGS) -o bigkey $(CLIBS)
 
 clean:
 	rm -f bigrsa bigkey unsafe.* *.txt
